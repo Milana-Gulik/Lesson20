@@ -24,7 +24,28 @@ public class ArraySorter {
         }
     }
 
+    public static void selectedSortDecs(int[] array) {
 
+        if (array == null) {
+//            return;
+            throw new RuntimeException();
+        }
+
+        for (int j = 0; j < array.length - 1; j++) {
+
+            int indexMinElement = j;
+
+            for (int i = j + 1; i < array.length; i++) {
+                if (array[indexMinElement] > array[i]) {
+                    indexMinElement = i;
+                }
+            }
+
+            int t = array[j];
+            array[j] = array[indexMinElement];
+            array[indexMinElement] = t;
+        }
+    }
 
 
         public static void bubbleSortAsc(int[] array) {
